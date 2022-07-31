@@ -9,7 +9,7 @@ import com.datdt.news.data.source.remote.NewsRemoteDataSourceType
 import org.koin.dsl.module
 
 val repositoryModule = module {
-    single<NewsLocalDataSourceType> { NewsLocalDataSource() }
+    single<NewsLocalDataSourceType> { NewsLocalDataSource(get()) }
     single<NewsRemoteDataSourceType> { NewsRemoteDataSource(get()) }
     single<NewsRepositoryType> { NewsRepository(get(), get()) }
 }

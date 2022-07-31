@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.datdt.news.data.model.Article
 import com.datdt.news.databinding.ItemArticleBinding
 import com.datdt.news.databinding.ItemLoadMoreBinding
+import com.datdt.news.extensions.formatDate
 import com.datdt.news.extensions.loadImage
 
 const val VIEW_TYPE_ITEM = 0
@@ -73,7 +74,7 @@ class ArticleViewHolder(
         image.loadImage(article.urlToImage)
         textTitle.text = article.title
         textSubTitle.text = article.description
-        textTime.text = article.publishedAt
+        textTime.text = article.publishedAt.formatDate()
     }
 }
 

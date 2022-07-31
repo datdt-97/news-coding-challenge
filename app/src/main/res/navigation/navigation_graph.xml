@@ -8,7 +8,27 @@
 
     <fragment
         android:id="@+id/home"
-        tools:layout="@layout/fragment_home"
+        android:name="com.datdt.news.ui.home.HomeFragment"
         android:label="HomeFragment"
-        android:name="com.datdt.news.ui.home.HomeFragment"/>
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_home_to_detail"
+            app:destination="@id/detail"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/home" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/detail"
+        android:name="com.datdt.news.ui.detail.DetailFragment"
+        android:label="DetailFragment"
+        tools:layout="@layout/fragment_detail">
+        <argument
+            android:name="article"
+            app:argType="com.datdt.news.data.model.Article" />
+    </fragment>
+
 </navigation>
